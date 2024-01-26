@@ -126,3 +126,19 @@ changeBtnText();
 activateNav(0);
 removeLogoClass();
 addNavItem();
+
+//onclick events
+const logo = document.getElementsByTagName("header")[0].children[0];
+const productArticles = document.getElementsByTagName("main")[0].children;
+
+logo.addEventListener("click", (e) => {
+  console.log("found you!");
+});
+
+for (let index = 0; index < productArticles.length; index++) {
+  productArticles[index].addEventListener("click", (e) => {
+    const value =
+      productArticles[index].getElementsByTagName("h3")[0].innerHTML;
+    console.log(`Hi, I'm article ${value}`);
+  });
+}
