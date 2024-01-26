@@ -66,6 +66,55 @@ function addNavItem() {
   navList.insertBefore(newNavItem, navList.children[3]);
 }
 
+function createNewProduct() {
+  //create element
+  let product = document.createElement("article");
+  product.classList.add("art-4");
+  //create img element
+  let imgFigure = document.createElement("figure");
+  let img = document.createElement("img");
+  img.setAttribute("src", "img/hoodie-forrest.png");
+  img.setAttribute("alt", "hoodie");
+  imgFigure.appendChild(img);
+  product.appendChild(imgFigure);
+
+  //create h2 element
+  let h2 = document.createElement("h2");
+  let h2Content = document.createTextNode("Sinus Hoodie");
+  h2.appendChild(h2Content);
+  product.appendChild(h2);
+
+  //create h3 element
+  let h3 = document.createElement("h3");
+  let h3Content = document.createTextNode("Forrest");
+  h3.appendChild(h3Content);
+  product.appendChild(h3);
+
+  //create p element
+  let p = document.createElement("p");
+  let pContent = document.createTextNode(
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, dolores."
+  );
+  p.appendChild(pContent);
+  product.appendChild(p);
+
+  //add button
+  let button = document.createElement("button");
+  let buttonContent = document.createTextNode("add to cart");
+  button.appendChild(buttonContent);
+
+  product.appendChild(button);
+
+  //call function to add product to page
+  insertProduct(product);
+}
+
+function insertProduct(product) {
+  const main = document.getElementsByTagName("main")[0];
+  main.insertAdjacentElement("beforeend", product);
+}
+
+createNewProduct();
 swapFirstHoodieName();
 navManipulation();
 editFireInfo();
